@@ -14,6 +14,12 @@ Clone the repository
 $ git clone https://github.com/oota-sushikuitee/roulette
 ```
 
+Change directory
+
+```bash
+$ cd roulette
+```
+
 Install dependencies
 
 ```bash
