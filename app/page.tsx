@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { drawLots } from '../utils/drawLots';
 
 const DrawLotsPage = () => {
@@ -39,12 +39,13 @@ const DrawLotsPage = () => {
       />
       <div className="flex items-center mb-4">
         <input
+          id="removeWinner"
           type="checkbox"
           checked={removeWinner}
           onChange={handleToggle}
           className="mr-2"
         />
-        <label>Remove winner from the list</label>
+        <label htmlFor="removeWinner">Remove winner from the list</label>
       </div>
       <button
         onClick={handleDraw}
