@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { drawLots } from '../utils/drawLots';
 
 const DrawLotsPage = () => {
   const [input, setInput] = useState('');
@@ -12,18 +13,10 @@ const DrawLotsPage = () => {
   };
 
   const handleDraw = () => {
-    let items = input.split('\n').filter((item) => item.trim() !== '');
-    if (items.length === 0) {
-      setResult(null);
-      return;
-    }
-    const randomIndex = Math.floor(Math.random() * items.length);
-    const winner = items[randomIndex];
+    const items = input.split('\n');
+    const { winner, remainingItems } = drawLots(items, removeWinner);
     setResult(winner);
-    if (removeWinner) {
-      items = items.filter((_, index) => index !== randomIndex);
-      setInput(items.join('\n'));
-    }
+    setInput(remainingItems.join('\n'));
   };
 
   const handleToggle = () => {
