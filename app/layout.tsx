@@ -40,6 +40,13 @@ const RootLayout = ({ children }: Props) => {
       </head>
       <body className="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
         {children}
+        <footer className="text-center p-4 bg-gray-200 dark:bg-gray-800">
+          <p>
+            &copy;{' '}
+            <a href="https://github.com/oota-sushikuitee">oota-sushikuitee</a>{' '}
+            2024
+          </p>
+        </footer>
       </body>
     </html>
   );
