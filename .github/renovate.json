@@ -9,17 +9,17 @@
   "schedule": ["after 3am on monday", "before 6am on monday"],
   "packageRules": [
     {
-      "matchPackagePatterns": ["node", "^@types/node$"],
       "allowedVersions": "/^[0-9]+[24680]\\.[0-9]+\\.0$/",
-      "groupName": "Node.js dependencies"
+      "groupName": "Node.js dependencies",
+      "matchPackageNames": ["/node/", "/^@types/node$/"]
     },
     {
-      "matchPackagePatterns": ["^@types/"],
-      "groupName": "@types dependencies"
+      "groupName": "@types dependencies",
+      "matchPackageNames": ["/^@types//"]
     },
     {
-      "matchPackagePatterns": ["^eslint", "^prettier"],
-      "groupName": "linting dependencies"
+      "groupName": "linting dependencies",
+      "matchPackageNames": ["/^eslint/", "/^prettier/"]
     },
     {
       "matchUpdateTypes": ["pin"],
