@@ -15,19 +15,19 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5.0.0
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v4.4.0
         with:
           node-version-file: '.node-version'
 
-      - name: Enable Corepack
-        run: corepack enable
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4.1.0
 
       - name: Install dependencies
         run: |
-          yarn install --immutable
+          pnpm i --frozen-lockfile
 
-      - name: Run Tests
-        run: yarn test
+      - name: Run Test
+        run: pnpm test
